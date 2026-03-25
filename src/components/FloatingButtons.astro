@@ -1,0 +1,64 @@
+---
+
+---
+
+<div class="fab-group">
+    <button
+        class="fab"
+        id="fab-palette"
+        aria-label="open command palette"
+        title="command palette">▣</button
+    >
+    <button
+        class="fab"
+        id="fab-theme"
+        aria-label="toggle theme"
+        title="toggle theme">🞻</button
+    >
+</div>
+
+<style>
+    .fab-group {
+        position: fixed;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        z-index: 50;
+    }
+
+    .fab {
+        width: 2.2rem;
+        height: 2.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--surface);
+        border: 1px solid var(--border);
+        color: var(--text);
+        font-size: 1.2rem;
+        cursor: pointer;
+        padding: 0;
+        transition:
+            background-color 0.15s,
+            color 0.15s;
+    }
+
+    .fab:hover {
+        background-color: var(--surface-alt);
+    }
+</style>
+
+<script>
+    document.getElementById("fab-theme")?.addEventListener("click", () => {
+        const current = document.documentElement.getAttribute("data-theme");
+        const next = current === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", next);
+        localStorage.setItem("theme", next);
+    });
+
+    document.getElementById("fab-palette")?.addEventListener("click", () => {
+        (window as any).openCommandPalette?.();
+    });
+</script>

@@ -3,6 +3,7 @@ import "../styles/global.css";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 import CommandPalette from "../components/CommandPalette.astro";
+import FloatingButtons from "../components/FloatingButtons.astro";
 interface Props {
     title: string;
 }
@@ -37,6 +38,7 @@ const { title } = Astro.props;
         </main>
         <Footer />
         <CommandPalette />
+        <FloatingButtons />
     </body>
 </html>
 

@@ -182,6 +182,8 @@
         input.focus();
     }
 
+    (window as any).openCommandPalette = open;
+
     function close() {
         container.setAttribute("aria-hidden", "true");
         input.value = "";
