@@ -55,7 +55,7 @@ body {
     font-size: 16px;
     background-color: var(--bg);
     color: var(--text);
-    font-family: 'DejaVu Math TeX Gyre', serif;
+    font-family: 'DejaVu Math', serif;
     /* font-family: 'DejaVu Sans Mono', monospace; */
     line-height: 1.5;
     min-height: 95vh;
